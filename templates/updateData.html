@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+	<h1> Update book</h1>
+	
+	<form  method="POST" >
+		<br>
+		<h2>Fill out the form if you would like to update an existed book ... </h2>
+		<br>
+        
+        {{form.hidden_tag()}}
+
+        {{form.book_title.label}}
+        {{form.book_title(class="form-control me-2 ")}}
+
+        {{form.author.label}}
+        {{form.author(class="form-control me-2 ")}}
+
+        {{form.country.label}}
+        {{form.country(class="form-control me-2 ")}}
+
+        {{form.book_link.label}}
+        {{form.book_link(class="form-control me-2 ")}}
+
+        {{form.author_link.label}}
+        {{form.author_link(class="form-control me-2 ")}}
+
+        {{form.country_link.label}}
+        {{form.country_link(class="form-control me-2 ")}}
+        <br>
+        {{form.submit(class="btn btn-primary" ,label=update)}}
+	</form>
+
+{% endblock %}

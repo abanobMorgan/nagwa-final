@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {%if book_title %}
+	<h1> the book {{book_title}} has been deleted</h1>
+    {%else%}
+		<form method="POST">
+
+			<br>
+			<h2> write the book name which you would like to remove?  </h2>
+			<br>
+			{{form.hidden_tag()}}
+
+			{{form.book_title.label}}
+			{{form.book_title(class="form-control me-2 ")}}
+			<br>
+			{{form.submit(class="btn btn-danger" ,label=delete)}}
+
+				
+		</form>
+	{% endif %} 
+	<!-- <script type="text/javascript">
+    function showForm(formElement) {
+		var x = document.getElementById(formElement);
+		if (x.style.display === "none") {
+			
+			x.style.display = "block";
+		} 
+		
+		else { x.style.display = "none"; }
+    }
+</script> -->
+
+{% endblock %}

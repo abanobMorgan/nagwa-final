@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1> {{context.Text}}</h1>
+
+    <table class="table-success   align-middle" 
+    cellspacing="0" cellpadding="1" border="1" width="1200">
+        <tr>
+          <td> 
+                <table class=" table-success  align-middle"  >
+                    <tr>
+                        <th style="width:300px;" class="align-center">{{'الترتيب'}}</th>
+                        <th  style="width:500px" class="align-center">{{"اسم الكتاب"}}</th>
+                        <th style="width:500px" class="align-center">{{"اسم المؤلف"}}</th>
+                        <th style="width:300px" class="align-center">{{"البلد"}}</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width:1200px; height:500px; overflow:auto;">
+                    <table class="table table-success table-striped  align-middle" >
+                    
+                        {%for book in  context.data%}      
+
+                            <tr>
+                                <td style="width:300px"  class="align-center">{{book.book_id}}</td>
+                                <td style="width:500px" class="align-center">{{book.book_title}}</td>
+                                <td style="width:500px" class="align-center">{{book.author}}</td>
+                                <td style="width:300px" class="align-center" >{{book.country}}</td>
+                            </tr>
+
+                        {%endfor%}  
+            
+
+                    </table>
+                </div>
+            </td>
+        </tr>
+{% endblock %}
